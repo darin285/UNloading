@@ -1,0 +1,2 @@
+# UNloading
+Func _MemTest() MsgBox(0, "", "Before array") Local $apSurfaces[10000]   ;Uses about 1.4 GB memory MsgBox(0, "", "Before loading") For $iX = 0 To UBound($apSurfaces) -1 $apSurfaces[$iX] = _SDL_GDIPlus_ImageLoadFromFile($sFile2) Next MsgBox(0, "", "Before UNloading") For $iX = 0 To UBound($apSurfaces) -1 _SDL_FreeSurface($apSurfaces[$iX]) Next MsgBox(0, "", "After UNloading")  Opt("TrayMenuMode", 3) HotKeySet("{Esc}", "_Exit")
